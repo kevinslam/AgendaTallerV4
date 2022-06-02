@@ -1,0 +1,58 @@
+﻿@page
+@model AgendaTallerV4.Pages.Contactos.BorrarModel
+@{
+    ViewData["Title"] = "Borrar contacto";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Borrar Contacto</h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="ContactoVm.Contacto.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Nombre" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Nombre" class="form-control" placeholder="Ingrese nombre" readonly/>
+                    <span asp-validation-for="ContactoVm.Contacto.Nombre" class="text-danger"></span>
+                </div>
+
+                  <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Email" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Email" class="form-control" placeholder="Ingrese email" readonly/>
+                    <span asp-validation-for="ContactoVm.Contacto.Email" class="text-danger"></span>
+                </div>
+
+                  <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Telefono" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Telefono" class="form-control" placeholder="Ingrese telefono" readonly/>
+                    <span asp-validation-for="ContactoVm.Contacto.Telefono" class="text-danger"></span>
+                </div>
+
+                <!-- Categorias-->
+
+                <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Categoria" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Categoria.Nombre" class="form-control" placeholder="Ingrese categoria" readonly/>
+                </div>
+
+                  <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.FechaCreacion" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.FechaCreacion" class="form-control" placeholder="Ingrese fecha de creación" readonly/>
+                    <span asp-validation-for="ContactoVm.Contacto.FechaCreacion" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" >Borrar Contacto</button>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <a asp-page="Index" class="btn btn-success" >Volver</a>
+        </div>
+    </div>
+</div>

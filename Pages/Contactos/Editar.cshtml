@@ -1,0 +1,63 @@
+﻿@page
+@model AgendaTallerV4.Pages.Contactos.EditarModel
+@{
+    ViewData["Title"] = "Editar contacto";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Editar Contacto</h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="ContactoVm.Contacto.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Nombre" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Nombre" class="form-control" placeholder="Ingrese nombre" />
+                    <span asp-validation-for="ContactoVm.Contacto.Nombre" class="text-danger"></span>
+                </div>
+
+                  <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Email" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Email" class="form-control" placeholder="Ingrese email" />
+                    <span asp-validation-for="ContactoVm.Contacto.Email" class="text-danger"></span>
+                </div>
+
+                  <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Telefono" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.Telefono" class="form-control" placeholder="Ingrese telefono" />
+                    <span asp-validation-for="ContactoVm.Contacto.Telefono" class="text-danger"></span>
+                </div>
+
+                <!-- Categorias-->
+
+                <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.Categoria" class="form-label"></label>
+
+                    <select asp-for="ContactoVm.Contacto.CategoriaId"
+                    asp-items="@(new SelectList(Model.ContactoVm.ListaCategorias, "Id","Nombre"))" class="form-control">
+
+                    </select>
+
+                </div>
+
+                  <div class="mb-3">
+                    <label asp-for="ContactoVm.Contacto.FechaCreacion" class="form-label"></label>
+                    <input asp-for="ContactoVm.Contacto.FechaCreacion" class="form-control" placeholder="Ingrese fecha de creación" />
+                    <span asp-validation-for="ContactoVm.Contacto.FechaCreacion" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" >Editar Contacto</button>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <a asp-page="Index" class="btn btn-success" >Volver</a>
+        </div>
+    </div>
+</div>
